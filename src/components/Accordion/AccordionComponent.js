@@ -1,46 +1,32 @@
 import React from "react";
 import styles from "./AccordionComponent.module.css";
 import { useState } from "react";
+import AccordionComponentItem from "./AccordionComponentItem";
+import { itemsArry } from "../Data/data";
 export default function AccordionComponent() {
   const [isvisible, setIsvisible] = useState(null);
 
-  return (
-    <div className="AccordionComponent">
-      <div className={`${styles.AccordionComponent}`}>
-        <div className={`${styles.headline}`}>
-          <label>Headline 1</label>
-          <button
-            onClick={() => {
-              if (isvisible === 1) {
-                setIsvisible(null);
-              } else {
-                setIsvisible(1);
-              }
-            }}
-          >
-            btn
-          </button>
-        </div>
-        {isvisible === 1 ? <p>Accordion content 1</p> : null}
-      </div>
+  function handleChange(accordionNumber) {
+    if (isvisible === accordionNumber) {
+      setIsvisible(null);
+    } else {
+      setIsvisible(accordionNumber);
+    }
+  }
 
-      <div className={`${styles.AccordionComponent}`}>
-        <div className={`${styles.headline}`}>
-          <label>Headline 1</label>
-          <button
-            onClick={() => {
-              if (isvisible === 2) {
-                setIsvisible(null);
-              } else {
-                setIsvisible(2);
-              }
-            }}
-          >
-            btn
-          </button>
-        </div>
-        {isvisible === 2 ? <p>Accordion content 1</p> : null}
-      </div>
+  return (
+    <div className={`${styles.accordionComponent}`}>
+      {itemsArry.map((item) => {
+        return (
+          <AccordionComponentItem
+            handleChange={handleChange}
+            isvisible={isvisible}
+            itemNumber={item.itemNumber}
+            headLabel={item.headLabel}
+            accordionContent={item.accordionContent}
+          />
+        );
+      })}
     </div>
   );
 }

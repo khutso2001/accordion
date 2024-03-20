@@ -1,0 +1,34 @@
+.AccordionComponentitem{
+    border: solid black;
+    border-radius: 10px;
+    padding: 0px 10px 0px 10px;
+}
+.itemHeadline{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    min-height: 4rem;
+}
+.itemHeadlineLabel{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.itemContent{
+    border-top: solid black;
+    min-height: 4rem;
+}
+.itemHeadlineButton{
+    border-radius: 100%;
+    height: 2.5rem;
+    padding-top: 4px;
+    width: 2.5rem;
+    color: white;
+    background: black;
+    border: none;
+}
+.rotated {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease; /* Add a transition for smooth rotation */
+    
+  }

@@ -1,9 +1,6 @@
-.AccordionComponent{
-    background-color: rgb(240, 239, 239);
-}
-.headline{
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
+.accordionComponent{
+    width: 32rem;
+    display: grid;
+    gap: 1rem;
 }
 
